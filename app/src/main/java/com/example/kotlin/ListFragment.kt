@@ -43,8 +43,13 @@ class ListFragment : Fragment() {
 
         /**버튼 클릭 시 다음페이지 화면전환하기*/
         binding.button.setOnClickListener {
-            parentFragmentManager.beginTransaction().replace(binding.listLayout.id,FormFragment()).commit()
+            parentFragmentManager
+                .beginTransaction()
+                .replace(R.id.layout,FormFragment())
+                .commit()
         }
+
+
         /**cancel버튼 이벤트 옵저버*/
         formFragment.cancel.observe(viewLifecycleOwner, Observer {
             if(it.hasBeenHandled){
