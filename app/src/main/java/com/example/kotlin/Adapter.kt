@@ -7,18 +7,20 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.kotlin.databinding.ItemBinding
 
 class Adapter: RecyclerView.Adapter<ViewHolder>() {
-    private var list = ArrayList<String>()
+    var list = arrayListOf<String>()
 
-    inner class MyViewHolder(private val binding:ItemBinding):ViewHolder(binding.root){
-        fun bind(content:String){
-            binding.textView.text = content
+    private lateinit var binding:ItemBinding
+    /** 아이템을 넣을 커스텀 뷰홀더*/
+    inner class MyViewHolder(binding: ItemBinding):ViewHolder(binding.root){
+        fun bind(name:String){
+            binding.textView.text = name
         }
     }
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val layoutInflater = LayoutInflater.from(parent.context)
-        var itemView = ItemBinding.inflate(layoutInflater, parent, false)
 
-        return MyViewHolder(itemView)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        var layoutInflater = LayoutInflater.from(parent.context)
+        binding = ItemBinding.inflate(layoutInflater,parent,false)
+        return MyViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -29,7 +31,7 @@ class Adapter: RecyclerView.Adapter<ViewHolder>() {
         return list.size
     }
 
-    fun setList(input_list:List<String>){
+    fun setList(input_list:MutableList<String>){
         list.addAll(input_list)
     }
 }
