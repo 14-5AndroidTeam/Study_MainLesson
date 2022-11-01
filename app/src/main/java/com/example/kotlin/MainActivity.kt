@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager
             .beginTransaction()
             .replace(binding.layout.id,ListFragment())
-            .addToBackStack(null)
             .commit()
     }
 }
