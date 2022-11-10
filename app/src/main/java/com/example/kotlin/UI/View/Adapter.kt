@@ -1,4 +1,4 @@
-package com.example.kotlin
+package com.example.kotlin.UI.View
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

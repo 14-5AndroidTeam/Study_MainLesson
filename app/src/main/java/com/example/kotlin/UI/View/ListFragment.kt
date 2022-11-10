@@ -1,14 +1,15 @@
-package com.example.kotlin
+package com.example.kotlin.UI.View
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
+import com.example.kotlin.Event
+import com.example.kotlin.R
 import com.example.kotlin.databinding.FragmentListBinding
 
 class ListFragment : Fragment() {
@@ -45,7 +46,7 @@ class ListFragment : Fragment() {
         binding.button.setOnClickListener {
             parentFragmentManager
                 .beginTransaction()
-                .replace(R.id.layout,FormFragment())
+                .replace(R.id.layout, FormFragment())
                 .commit()
         }
 
