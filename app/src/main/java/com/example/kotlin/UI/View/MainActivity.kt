@@ -1,8 +1,8 @@
-package com.example.kotlin
+package com.example.kotlin.UI.View
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.LifecycleOwner
+import com.example.kotlin.UI.View.ListFragment
 import com.example.kotlin.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         /**ListFragment 등록*/
         supportFragmentManager
             .beginTransaction()
-            .replace(binding.layout.id,ListFragment())
+            .replace(binding.layout.id, ListFragment())
             .commit()
     }
 }

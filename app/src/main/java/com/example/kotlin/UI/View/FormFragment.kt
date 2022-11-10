@@ -1,4 +1,4 @@
-package com.example.kotlin
+package com.example.kotlin.UI.View
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
+import com.example.kotlin.Event
+import com.example.kotlin.R
+import com.example.kotlin.UI.ViewModel.ViewModel
 import com.example.kotlin.databinding.FragmentFormBinding
 
 class FormFragment : Fragment() {
@@ -39,7 +42,7 @@ class FormFragment : Fragment() {
             //_cancel.postValue(Event(true))
             parentFragmentManager
                 .beginTransaction()
-                .replace(R.id.layout,ListFragment())
+                .replace(R.id.layout, ListFragment())
                 .commit()
         }
         binding.submitBtn.setOnClickListener {
@@ -51,7 +54,7 @@ class FormFragment : Fragment() {
                 /**밑에 "새로운 TodoList항목이 성공적으로 추가되었습니다 토스트or 다이얼로그 띄우기"*/
                 parentFragmentManager
                     .beginTransaction()
-                    .replace(R.id.layout,ListFragment())
+                    .replace(R.id.layout, ListFragment())
                     .commit()
             })
         }
