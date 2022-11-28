@@ -9,6 +9,6 @@ data class Todos(
     var id:Int,
     @SerializedName("content")
     var content:String,
-    @SerializedName("dueDate")
-    var dueDate:String
+    @SerializedName("deadline")
+    var deadline:String
 )
