@@ -9,13 +9,3 @@ data class ToDoList(
     @SerializedName("total_post")
     var total_post:Int,
 )
-data class Todos(
-    @SerializedName("_id")
-    var _id:String,
-    @SerializedName("id")
-    var id:Int,
-    @SerializedName("content:")
-    var content:String,
-    @SerializedName("dueDate:")
-    var dueDate:String
-)
