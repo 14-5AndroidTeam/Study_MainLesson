@@ -9,6 +9,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
+import com.example.kotlin.Data.DTO.Todos
 import com.example.kotlin.Event
 import com.example.kotlin.R
 import com.example.kotlin.UI.ViewModel.ListModel
@@ -37,12 +38,9 @@ class ListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var list:MutableList<String> = mutableListOf("kevin","kelly","jimmy","halsy","bob","peter","alex","charlie")
-
         /**어댑터 등록하기*/
         var adapter = Adapter()
         binding.recyclerview.adapter = adapter
-        adapter.setList(list)
         /**뷰모델 등록하기*/
         var viewmodel = ListModel()
         viewmodel.getList()
@@ -53,5 +51,9 @@ class ListFragment : Fragment() {
                 .replace(R.id.layout, FormFragment())
                 .commit()
         }
+        /**뷰모델 옵저버*/
+        viewmodel.setList.observe(viewLifecycleOwner, Observer {
+            adapter.setList(it.peekContent().todos as MutableList<Todos>)
+        })
     }
 }

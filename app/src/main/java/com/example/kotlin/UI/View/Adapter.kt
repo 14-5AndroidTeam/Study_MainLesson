@@ -4,16 +4,18 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.example.kotlin.Data.DTO.Todos
 import com.example.kotlin.databinding.ItemBinding
 
 class Adapter: RecyclerView.Adapter<ViewHolder>() {
-    var list = arrayListOf<String>()
+    var list = arrayListOf<Todos>()
 
     private lateinit var binding:ItemBinding
     /** 아이템을 넣을 커스텀 뷰홀더*/
     inner class MyViewHolder(binding: ItemBinding):ViewHolder(binding.root){
-        fun bind(name:String){
-            binding.textView.text = name
+        fun bind(data: Todos){
+            binding.content.text = data.content
+            binding.duedate.text = data.dueDate
         }
     }
 
@@ -31,7 +33,7 @@ class Adapter: RecyclerView.Adapter<ViewHolder>() {
         return list.size
     }
 
-    fun setList(input_list:MutableList<String>){
+    fun setList(input_list:MutableList<Todos>){
         list.addAll(input_list)
     }
 }
