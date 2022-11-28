@@ -1,5 +1,6 @@
 package com.example.kotlin.UI.View
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -15,7 +16,7 @@ class Adapter: RecyclerView.Adapter<ViewHolder>() {
     inner class MyViewHolder(binding: ItemBinding):ViewHolder(binding.root){
         fun bind(data: Todos){
             binding.content.text = data.content
-            binding.duedate.text = data.dueDate
+            binding.deadline.text = data.deadline
         }
     }
 
@@ -33,7 +34,7 @@ class Adapter: RecyclerView.Adapter<ViewHolder>() {
         return list.size
     }
 
-    fun setList(input_list:MutableList<Todos>){
+    fun setList(input_list:List<Todos>){
         list.addAll(input_list)
     }
 }

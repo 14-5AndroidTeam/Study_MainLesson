@@ -1,6 +1,7 @@
 package com.example.kotlin.UI.View
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -53,7 +54,8 @@ class ListFragment : Fragment() {
         }
         /**뷰모델 옵저버*/
         viewmodel.setList.observe(viewLifecycleOwner, Observer {
-            adapter.setList(it.peekContent().todos as MutableList<Todos>)
+            adapter.setList(it.peekContent().todos)
+            adapter.notifyItemRangeChanged(0,it.peekContent().total_post)
         })
     }
 }
