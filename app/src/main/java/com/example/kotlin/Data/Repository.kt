@@ -1,6 +1,7 @@
 package com.example.kotlin.Data
 
 import android.util.Log
+import com.example.kotlin.Data.DTO.Form
 import com.example.kotlin.Data.DTO.ToDoList
 import retrofit2.Call
 import retrofit2.Callback
@@ -24,6 +25,22 @@ class Repository {
             override fun onFailure(call: Call<ToDoList>, t: Throwable) {
                 /**응답 실패*/
                 param.onFailure(t)
+            }
+        })
+    }
+
+    fun postForm(form:Form){
+        val call = Dr.service.postForm(form) //api 호출
+
+        call.enqueue(object : Callback<String>{
+            override fun onResponse(call: Call<String>, response: Response<String>) {
+                /**응답 성공*/
+                Log.i("post_Success", response.body().toString()) //데이터 확인
+            }
+
+            override fun onFailure(call: Call<String>, t: Throwable) {
+                /**요청 실패*/
+                Log.i("post_Failure", t.toString()) //데이터 확인
             }
         })
     }

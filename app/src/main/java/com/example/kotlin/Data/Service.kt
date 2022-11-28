@@ -1,7 +1,9 @@
 package com.example.kotlin.Data
 
+import com.example.kotlin.Data.DTO.Form
 import com.example.kotlin.Data.DTO.ToDoList
 import retrofit2.Call
+import retrofit2.http.Body
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -11,4 +13,10 @@ interface Service {
     /**GET, POST 등의 API 정의하기*/
     @GET("/todos") //todolist 불러오는 api
     fun getList(): Call<ToDoList>
+
+    @POST("/todos")
+    fun postForm(
+        @Body form: Form
+    ):Call<String>
+
 }
