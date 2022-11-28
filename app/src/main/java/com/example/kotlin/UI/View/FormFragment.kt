@@ -10,7 +10,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.example.kotlin.Event
 import com.example.kotlin.R
-import com.example.kotlin.UI.ViewModel.ListModel
+import com.example.kotlin.UI.ViewModel.FormModel
 import com.example.kotlin.databinding.FragmentFormBinding
 
 class FormFragment : Fragment() {
@@ -18,7 +18,6 @@ class FormFragment : Fragment() {
     /**LiveData 변수 생성*/
     private var _cancel = MutableLiveData<Event<Boolean>>()
     val cancel: LiveData<Event<Boolean>> = _cancel
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,8 +34,7 @@ class FormFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var viewmodel = ListModel()
-
+        var viewmodel = FormModel()
         /**cancel, submit 버튼 이벤트 작성하기*/
         binding.cancelBtn.setOnClickListener {
             //_cancel.postValue(Event(true))
@@ -46,6 +44,13 @@ class FormFragment : Fragment() {
                 .commit()
         }
         binding.submitBtn.setOnClickListener {
+            /**공백데이터가 아닌 경우만 서버로 제출을 허용함*/
+            if(binding.inputContent.text.isEmpty() or binding.inputDeadline.text.isEmpty()){
+                /**toast 띄우기*/
+            }
+            else{
+                viewmodel.postForm(binding.inputContent.text.toString(), binding.inputDeadline.text.toString())
+            }
             //_submit.postValue(Event(true))
             /**뷰모델에게 할일,기한 데이터를 뽑아서 전달한다*/
             /**관찰하고 있는 뷰모델의 LiveData의 Observer*/
