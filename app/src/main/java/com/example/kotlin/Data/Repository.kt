@@ -16,6 +16,7 @@ class Repository {
         call.enqueue(object : Callback<ToDoList>{
             override fun onResponse(call: Call<ToDoList>, response: Response<ToDoList>) {
                 /**응답 성공*/
+                Log.i("response", response.body().toString()) //데이터 확인
                 /**Viewmodel의 인터페이스 구현부에 데이터 넘겨주기*/
                 param.onSuccess(response.body())
             }

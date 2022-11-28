@@ -8,8 +8,10 @@ import android.view.ViewGroup
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModel
 import com.example.kotlin.Event
 import com.example.kotlin.R
+import com.example.kotlin.UI.ViewModel.ListModel
 import com.example.kotlin.databinding.FragmentListBinding
 
 class ListFragment : Fragment() {
@@ -41,7 +43,9 @@ class ListFragment : Fragment() {
         var adapter = Adapter()
         binding.recyclerview.adapter = adapter
         adapter.setList(list)
-
+        /**뷰모델 등록하기*/
+        var viewmodel = ListModel()
+        viewmodel.getList()
         /**버튼 클릭 시 다음페이지 화면전환하기*/
         binding.button.setOnClickListener {
             parentFragmentManager
@@ -49,19 +53,5 @@ class ListFragment : Fragment() {
                 .replace(R.id.layout, FormFragment())
                 .commit()
         }
-
-
-        /**cancel버튼 이벤트 옵저버*/
-        formFragment.cancel.observe(viewLifecycleOwner, Observer {
-            if(it.hasBeenHandled){
-
-            }
-        })
-        /**submit버튼 이벤트 옵저버*/
-        formFragment.submit.observe(viewLifecycleOwner, Observer {
-            if(it.hasBeenHandled){
-
-            }
-        })
     }
 }

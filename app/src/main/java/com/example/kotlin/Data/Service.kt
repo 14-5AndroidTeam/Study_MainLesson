@@ -9,6 +9,6 @@ import retrofit2.http.Path
 
 interface Service {
     /**GET, POST 등의 API 정의하기*/
-    @GET("list/") //todolist 불러오는 api
+    @GET("/todos") //todolist 불러오는 api
     fun getList(): Call<ToDoList>
 }

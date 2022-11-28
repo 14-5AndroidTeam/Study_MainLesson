@@ -6,7 +6,7 @@ import com.example.kotlin.Data.DTO.ToDoList
 import com.example.kotlin.Data.Repository
 import com.example.kotlin.Event
 
-class ViewModel:androidx.lifecycle.ViewModel() {
+class ListModel:androidx.lifecycle.ViewModel() {
 
     val repo = Repository()
 
