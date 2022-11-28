@@ -15,11 +15,6 @@ class ListModel:androidx.lifecycle.ViewModel() {
 
     private var _setList = MutableLiveData<Event<ToDoList>>()
     val setList: LiveData<Event<ToDoList>> = _setList
-    fun postTodo(content: String, dueDate: String) {
-        /**RetrofitObject.블라블라 <- 콜백함수*/
-        /**콜백함수에서 받은 반환 값을 LiveData 형식의 변수에 할당*/
-        _submit.postValue(Event(true))
-    }
 
     fun getList(){
         repo.getList(object :Repository.GetDataCallback<ToDoList>{
