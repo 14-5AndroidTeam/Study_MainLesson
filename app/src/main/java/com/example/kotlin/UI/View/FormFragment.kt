@@ -10,7 +10,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.example.kotlin.Event
 import com.example.kotlin.R
-import com.example.kotlin.UI.ViewModel.ViewModel
+import com.example.kotlin.UI.ViewModel.ListModel
 import com.example.kotlin.databinding.FragmentFormBinding
 
 class FormFragment : Fragment() {
@@ -35,7 +35,7 @@ class FormFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var viewmodel = ViewModel()
+        var viewmodel = ListModel()
 
         /**cancel, submit 버튼 이벤트 작성하기*/
         binding.cancelBtn.setOnClickListener {
