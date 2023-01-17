@@ -1,9 +1,7 @@
-package com.example.kotlin.UI.View
+package com.example.kotlin.ui.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.kotlin.Util.coroutine.ExampleNonSuspend
-import com.example.kotlin.Util.coroutine.ExampleSuspend
 import com.example.kotlin.databinding.ActivityMainBinding
 import kotlinx.coroutines.*
 

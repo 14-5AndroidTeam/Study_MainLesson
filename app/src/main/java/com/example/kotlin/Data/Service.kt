@@ -1,13 +1,11 @@
-package com.example.kotlin.Data
+package com.example.kotlin.data
 
-import com.example.kotlin.Data.DTO.Form
-import com.example.kotlin.Data.DTO.ToDoList
+import com.example.kotlin.data.dto.Form
+import com.example.kotlin.data.dto.ToDoList
 import retrofit2.Call
 import retrofit2.http.Body
-import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 import retrofit2.http.POST
-import retrofit2.http.Path
 
 interface Service {
     /**GET, POST 등의 API 정의하기*/

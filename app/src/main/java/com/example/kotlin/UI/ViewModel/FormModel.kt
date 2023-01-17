@@ -1,10 +1,9 @@
-package com.example.kotlin.UI.ViewModel
+package com.example.kotlin.ui.viewmodel
 
-import android.text.Editable
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.kotlin.Data.DTO.Form
-import com.example.kotlin.Data.Repository
+import com.example.kotlin.data.dto.Form
+import com.example.kotlin.data.Repository
 import com.example.kotlin.Event
 
 class FormModel:androidx.lifecycle.ViewModel(){

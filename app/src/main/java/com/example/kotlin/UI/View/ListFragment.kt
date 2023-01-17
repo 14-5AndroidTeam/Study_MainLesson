@@ -1,7 +1,6 @@
-package com.example.kotlin.UI.View
+package com.example.kotlin.ui.view
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,16 +8,13 @@ import android.view.ViewGroup
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
-import com.example.kotlin.Data.DTO.Todos
 import com.example.kotlin.Event
 import com.example.kotlin.R
-import com.example.kotlin.UI.ViewModel.ListModel
+import com.example.kotlin.ui.viewmodel.ListModel
 import com.example.kotlin.databinding.FragmentListBinding
 
 class ListFragment : Fragment() {
     private lateinit var binding:FragmentListBinding
-    val formFragment = FormFragment()
     /**LiveData 변수 생성*/
     private var _form = MutableLiveData<Event<Boolean>>()
     val form: LiveData<Event<Boolean>> = _form
@@ -32,7 +28,7 @@ class ListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentListBinding.inflate(inflater, container, false)
-        // Inflate the layout for this fragment
+        // Inflate the layout for 이ㄸthis fragment
         return binding.root
     }
 
@@ -53,9 +49,9 @@ class ListFragment : Fragment() {
                 .commit()
         }
         /**뷰모델 옵저버*/
-        viewmodel.setList.observe(viewLifecycleOwner, Observer {
-            adapter.setList(it.peekContent().todos)
-            adapter.notifyItemRangeChanged(0,it.peekContent().total_post)
-        })
+//        viewmodel.setList.observe(viewLifecycleOwner, Observer {
+//            adapter.setList(it.peekContent().todos)
+//            adapter.notifyItemRangeChanged(0,it.peekContent().total_post)
+//        })
     }
 }

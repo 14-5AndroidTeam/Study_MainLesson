@@ -1,4 +1,4 @@
-package com.example.kotlin.Data
+package com.example.kotlin.data
 
 import com.google.gson.GsonBuilder
 import retrofit2.Retrofit

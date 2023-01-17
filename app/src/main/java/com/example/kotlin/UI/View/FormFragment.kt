@@ -1,4 +1,4 @@
-package com.example.kotlin.UI.View
+package com.example.kotlin.ui.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,7 +10,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.example.kotlin.Event
 import com.example.kotlin.R
-import com.example.kotlin.UI.ViewModel.FormModel
+import com.example.kotlin.ui.viewmodel.FormModel
 import com.example.kotlin.databinding.FragmentFormBinding
 
 class FormFragment : Fragment() {

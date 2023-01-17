@@ -13,8 +13,9 @@
         android:theme="@style/Theme.Kotlin"
         tools:targetApi="31">
         <activity
-            android:name=".UI.View.MainActivity"
-            android:exported="true">
+            android:name=".ui.view.MainActivity"
+            android:exported="true"
+            android:label="Kotlin">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

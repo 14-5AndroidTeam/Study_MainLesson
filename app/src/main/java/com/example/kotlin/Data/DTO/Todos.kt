@@ -1,4 +1,4 @@
-package com.example.kotlin.Data.DTO
+package com.example.kotlin.data.dto
 
 import com.google.gson.annotations.SerializedName
 

@@ -1,8 +1,8 @@
-package com.example.kotlin.Data
+package com.example.kotlin.data
 
 import android.util.Log
-import com.example.kotlin.Data.DTO.Form
-import com.example.kotlin.Data.DTO.ToDoList
+import com.example.kotlin.data.dto.Form
+import com.example.kotlin.data.dto.ToDoList
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

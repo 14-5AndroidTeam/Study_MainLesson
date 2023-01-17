@@ -1,9 +1,10 @@
-package com.example.kotlin.UI.ViewModel
+package com.example.kotlin.ui.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.kotlin.Data.DTO.ToDoList
-import com.example.kotlin.Data.Repository
+import com.example.kotlin.data.dto.ToDoList
+import com.example.kotlin.data.Repository
 import com.example.kotlin.Event
 
 class ListModel:androidx.lifecycle.ViewModel() {
@@ -21,6 +22,7 @@ class ListModel:androidx.lifecycle.ViewModel() {
             override fun onSuccess(data: ToDoList?) {
                 /**응답받은 데이터 내용을 LiveData로 할당한다*/
                 if(data != null) _setList.postValue(Event(data))
+                Log.i("ListModel","fine")
             }
 
             override fun onFailure(throwable: Throwable) {

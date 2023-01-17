@@ -1,19 +1,18 @@
-package com.example.kotlin.UI.View
+package com.example.kotlin.ui.view
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.example.kotlin.Data.DTO.Todos
+import com.example.kotlin.data.dto.Todos
 import com.example.kotlin.databinding.ItemBinding
 
 class Adapter: RecyclerView.Adapter<ViewHolder>() {
-    var list = arrayListOf<Todos>()
+    private var list = arrayListOf<Todos>()
 
-    private lateinit var binding:ItemBinding
     /** 아이템을 넣을 커스텀 뷰홀더*/
     inner class MyViewHolder(binding: ItemBinding):ViewHolder(binding.root){
+        val binding:ItemBinding = binding
         fun bind(data: Todos){
             binding.content.text = data.content
             binding.deadline.text = data.deadline
@@ -21,8 +20,8 @@ class Adapter: RecyclerView.Adapter<ViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        var layoutInflater = LayoutInflater.from(parent.context)
-        binding = ItemBinding.inflate(layoutInflater,parent,false)
+        val layoutInflater = LayoutInflater.from(parent.context)
+        val binding = ItemBinding.inflate(layoutInflater,parent,false)
         return MyViewHolder(binding)
     }
 
