@@ -1,4 +1,4 @@
-package com.example.kotlin.Util.coroutine
+package com.example.kotlin.util.coroutine
 
 import android.util.Log
 import kotlinx.coroutines.*

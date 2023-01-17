@@ -1,6 +1,5 @@
-package com.example.kotlin.Util.coroutine
+package com.example.kotlin.util.coroutine
 
-import android.content.ContentValues.TAG
 import android.util.Log
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
